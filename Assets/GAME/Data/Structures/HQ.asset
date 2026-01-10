@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HQ
   m_EditorClassIdentifier: Assembly-CSharp::GAME.Scripts.Data.StructureDataSO
   StructureLevels:
-  - StructureSprite: {fileID: 21300000, guid: 1460deffa26539a41bf955586cafcb28, type: 3}
-    ResourceTypeToUnlock: 0
+  - StructureSprite: {fileID: 21300000, guid: 0d08bd603d3d47143960cebdc5eafda4, type: 3}
+    ResourceTypeToUnlock: {fileID: 0}
     ResourceAmountToUnlock: 10
-  - StructureSprite: {fileID: 21300000, guid: 1460deffa26539a41bf955586cafcb28, type: 3}
-    ResourceTypeToUnlock: 0
+  - StructureSprite: {fileID: 21300000, guid: 68707723f73fd25458a5c7d670e61f0e, type: 3}
+    ResourceTypeToUnlock: {fileID: 0}
     ResourceAmountToUnlock: 10

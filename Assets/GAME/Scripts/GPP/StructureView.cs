@@ -37,7 +37,7 @@ public class StructureView : MonoBehaviour
         _spriteRenderer.sprite = structureDataSO.StructureLevels[_currentLevelIndex].StructureSprite;
     }
 
-    private void Upgrade()
+    public void Upgrade()
     {
         _currentLevelIndex++;
         StructureLevelData levelData = structureDataSO.StructureLevels[_currentLevelIndex];
