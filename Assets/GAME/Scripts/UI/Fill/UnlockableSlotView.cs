@@ -68,16 +68,18 @@ public class UnlockableSlotView : MonoBehaviour
         }
 
 
-        if(_filledItems < _costAmount)
-            return;
-        if (_cachedInventory.RemoveItemByID(_resourceData.ResourceItem.ItemID, 1))
+        if (_filledItems < _costAmount)
         {
-            _filledItems++;
+            if (_cachedInventory.RemoveItemByID(_resourceData.ResourceItem.ItemID, 1))
+            {
+                _filledItems++;
+            }
+            else
+            {
+                return;
+            }
         }
-        else
-        {
-            return;
-        }
+
 
         _timer += Time.deltaTime;
         var pct = Mathf.Clamp01(_timer / _duration);
@@ -87,7 +89,7 @@ public class UnlockableSlotView : MonoBehaviour
 
         int amountProgress = (int)(_costAmount * inverse);
         _costTypeText.text = amountProgress.ToString();
-        if (_filledItems >= _costAmount)
+        if (_timer >= _duration)
         {
             _onFilled.Invoke();
             Destroy(gameObject);
