@@ -21,15 +21,15 @@ public class ResourceInteractable : MonoBehaviour
     private int _initialQuantity;
     private Inventory _targetInventory;
 
-    public void Reset()
+    public void Setup()
     {
-        _gatheringTimer = 0;
+        
         _initialQuantity = ResourceSettingData.Quantity;
     }
 
     private void Start()
     {
-        Reset();
+        Setup();
     }
 
     private void Tick()
@@ -41,7 +41,7 @@ public class ResourceInteractable : MonoBehaviour
             _FloatingTextSpawner.Spawn(ResourceSettingData.ResourceAmountPerGathering, transform.position);
             // Logic
             Pick("MainInventory");
-            Reset();
+            _gatheringTimer = 0;
         }
     }
 
@@ -70,7 +70,7 @@ public class ResourceInteractable : MonoBehaviour
             return; 
         }
         
-        Reset();
+        _gatheringTimer = 0;
         
     }
     
@@ -98,14 +98,15 @@ public class ResourceInteractable : MonoBehaviour
         else
         {
             MMInventoryEvent.Trigger(MMInventoryEventType.Pick, null, ResourceSettingData.ResourceItem.TargetInventoryName, ResourceSettingData.ResourceItem, ResourceSettingData.ResourceAmountPerGathering, 0, playerID);
-        }				
-        if (ResourceSettingData.ResourceItem.Pick(playerID))
-        {
             _initialQuantity -= ResourceSettingData.ResourceAmountPerGathering;
             if (_initialQuantity <= 0)
             {
                 Destroy(gameObject);
             }
+        }				
+        if (ResourceSettingData.ResourceItem.Pick(playerID))
+        {
+            
         }			
     }
     
