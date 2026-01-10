@@ -13,3 +13,11 @@ public class ResourceDataSO : ScriptableObject
     [Header("Cosmetic")]
     public Sprite ResourceIcon;
 }
+
+public enum ResourceType
+{
+    Wood,
+    Stone,
+    Food,
+    Metal
+}

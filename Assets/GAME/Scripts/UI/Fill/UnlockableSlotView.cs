@@ -1,7 +1,11 @@
 using System;
 using System.Globalization;
+using GAME.Scripts;
+using MoreMountains.InventoryEngine;
+using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SocialPlatforms.GameCenter;
 using UnityEngine.UI;
 
 [Serializable]
@@ -21,10 +25,22 @@ public class UnlockableSlotView : MonoBehaviour
     [SerializeField] private Text _costTypeText;
     [SerializeField] private UnlockableSlotData _data;
 
+    [Header("Spawn & Upgrade")] 
+    public ResourceDataSO _resourceData;
+    public Transform spawnPoint;
+    public GameObject structurePrefab;
+
+    private int _filledItems;
     private int _costAmount;
     private float _duration;
     private float _timer;
-    
+    private Inventory _cachedInventory;
+
+    private void Start()
+    {
+        Setup();
+    }
+
     public void Reset()
     {
         if (!_targetImage)
@@ -40,11 +56,29 @@ public class UnlockableSlotView : MonoBehaviour
         _costType.sprite = _data.Sprite;
         _costTypeText.text = _costAmount.ToString();
         _targetImage.fillAmount = 0;
+        _filledItems = 0;
         _timer = 0;
     }
 
     public void Tick()
     {
+        if (_cachedInventory == null)
+        {
+            _cachedInventory = Inventory.FindInventory(Gameconstants.MAIN_INVENTORY_NAME, "Player1");
+        }
+
+
+        if(_filledItems < _costAmount)
+            return;
+        if (_cachedInventory.RemoveItemByID(_resourceData.ResourceItem.ItemID, 1))
+        {
+            _filledItems++;
+        }
+        else
+        {
+            return;
+        }
+
         _timer += Time.deltaTime;
         var pct = Mathf.Clamp01(_timer / _duration);
         _targetImage.fillAmount = pct;
@@ -53,11 +87,16 @@ public class UnlockableSlotView : MonoBehaviour
 
         int amountProgress = (int)(_costAmount * inverse);
         _costTypeText.text = amountProgress.ToString();
-        if (_timer >= _duration)
+        if (_filledItems >= _costAmount)
         {
             _onFilled.Invoke();
-            this.enabled = false;
+            Destroy(gameObject);
         }
+    }
+
+    public void SpawnStructure()
+    {
+        Instantiate(structurePrefab, spawnPoint.position, spawnPoint.rotation);
     }
     
     
