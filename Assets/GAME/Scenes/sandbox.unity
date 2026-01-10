@@ -309,17 +309,6 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 2049969793}
-    - target: {fileID: 4008037332778342496, guid: c097d04fdef1a00469e8c8dfd2ae363d,
-        type: 3}
-      propertyPath: _resourceData
-      value: 
-      objectReference: {fileID: 11400000, guid: 031625b3f4fe61a4185fa6b4224938bd,
-        type: 2}
-    - target: {fileID: 4008037332778342496, guid: c097d04fdef1a00469e8c8dfd2ae363d,
-        type: 3}
-      propertyPath: _data.CostAmount
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6729928366018839930, guid: c097d04fdef1a00469e8c8dfd2ae363d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -374,16 +363,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HQSapwner
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156804213331378535, guid: c097d04fdef1a00469e8c8dfd2ae363d,
-        type: 3}
-      propertyPath: OnExit.m_PersistentCalls.m_Calls.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9156804213331378535, guid: c097d04fdef1a00469e8c8dfd2ae363d,
-        type: 3}
-      propertyPath: OnEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
