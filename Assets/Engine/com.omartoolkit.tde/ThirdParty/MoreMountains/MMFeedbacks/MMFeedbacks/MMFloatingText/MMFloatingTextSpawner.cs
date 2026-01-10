@@ -515,6 +515,12 @@ namespace MoreMountains.Feedbacks
 			MMFloatingTextSpawnEvent.Unregister(OnMMFloatingTextSpawnEvent);
 		}
 
+		// Event Methods
+
+		public void Spawn(int value, Vector3 position)
+		{
+			Spawn(string.Format("+{0}", value), position, Vector3.zero);
+		}
 		// Test methods ----------------------------------------------------------------------------------------
 
 		#region TestMethods
