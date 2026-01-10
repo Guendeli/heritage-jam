@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: e842c1fba6b07bc47b94d0b73b82dccd
+AssetOrigin:
+  serializedVersion: 1
+  productId: 89636
+  packageName: TopDown Engine
+  packageVersion: 4.4
+  assetPath: Assets/TopDownEngine/ThirdParty/MoreMountains/MMTools/Demos/MMTween/MMTweenPlotter/ReflectionProbe-0.exr
+  uploadId: 779820
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -141,10 +148,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 89636
-  packageName: TopDown Engine
-  packageVersion: 4.4
-  assetPath: Assets/TopDownEngine/ThirdParty/MoreMountains/MMTools/Demos/MMTween/MMTweenPlotter/ReflectionProbe-0.exr
-  uploadId: 779820

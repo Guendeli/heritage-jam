@@ -38,10 +38,10 @@ MonoBehaviour:
     AllowEquipShortcut: 0
     AllowUseShortcut: 0
   Quantity: 1
-  ItemName: Wood
+  ItemName: Rock
   ShortDescription: 
   Description: 
-  Icon: {fileID: 21300022, guid: 22132c6b69a48954b9505792504dca22, type: 3}
+  Icon: {fileID: 21300000, guid: 4b91b3896568a1643b71ed598f9614b4, type: 3}
   Prefab: {fileID: 0}
   ForcePrefabDropQuantity: 0
   PrefabDropQuantity: 1
