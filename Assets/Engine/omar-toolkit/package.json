@@ -1,0 +1,14 @@
+{
+    "name": "com.guendeli.oryx",
+    "displayName": "Oryx",
+    "version": "0.7.0",
+    "unity": "2021.3",
+    "description": "A game-agnostic framework for Unity",
+    "keywords": [
+        "unity"
+    ],
+    "category": "Unity",
+     "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+     }
+}

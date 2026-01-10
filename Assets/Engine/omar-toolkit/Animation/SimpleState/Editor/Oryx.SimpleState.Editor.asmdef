@@ -1,0 +1,19 @@
+{
+    "name": "Oryx.SimpleState.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:975d3146239218c4aa23ffd83132562e",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
