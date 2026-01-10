@@ -2014,7 +2014,7 @@ MonoBehaviour:
   BlockingConditionStates: 
   BlockingWeaponStates: 
   PlayerID: Player1
-  MainInventoryName: KoalaMainInventory
+  MainInventoryName: MainInventory
   WeaponInventoryName: KoalaWeaponInventory
   HotbarInventoryName: 
   InventoryTransform: {fileID: 0}
