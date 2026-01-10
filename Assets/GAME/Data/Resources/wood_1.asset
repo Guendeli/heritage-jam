@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12371f6da955e1c4489e8322c627c3f8, type: 3}
   m_Name: wood_1
   m_EditorClassIdentifier: Assembly-CSharp::ResourceDataSO
-  GatheringDuration: 2
+  ResourceItem: {fileID: 11400000, guid: 381d50ecb3443c042a3be9897052b379, type: 2}
+  GatheringDuration: 1
   ResourceAmountPerGathering: 1
+  Quantity: 10
   ResourceIcon: {fileID: 21300022, guid: b528708a5a8f28343aefa9e1d46670a7, type: 3}

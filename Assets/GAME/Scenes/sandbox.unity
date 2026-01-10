@@ -5389,7 +5389,7 @@ GameObject:
   - component: {fileID: 820939800}
   - component: {fileID: 820939801}
   m_Layer: 0
-  m_Name: KoalaMainInventory
+  m_Name: MainInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

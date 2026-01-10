@@ -1,3 +1,4 @@
+using MoreMountains.InventoryEngine;
 using UnityEngine;
 
 
@@ -5,8 +6,10 @@ using UnityEngine;
 public class ResourceDataSO : ScriptableObject
 {
     [Header("Base Settings")]
+    public InventoryItem ResourceItem;
     public float GatheringDuration;
     public int ResourceAmountPerGathering;
+    public int Quantity;
     [Header("Cosmetic")]
     public Sprite ResourceIcon;
 }
