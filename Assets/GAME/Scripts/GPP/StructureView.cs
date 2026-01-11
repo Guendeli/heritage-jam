@@ -1,3 +1,4 @@
+using GAME.Scripts;
 using GAME.Scripts.Data;
 using UnityEngine;
 
@@ -44,5 +45,6 @@ public class StructureView : MonoBehaviour
         if (levelData == null)
             return;
         _spriteRenderer.sprite = levelData.StructureSprite;
+        Gameconstants.OnLevelUp?.Invoke(_currentLevelIndex);
     }
 }
