@@ -74,10 +74,7 @@ public class GameManager : MonoBehaviour
         Character player = LevelManager.Instance.Players[0];
         
         float distance = Vector3.Distance(player.transform.position, _safeAreaView.transform.position);
-        if (distance <= _safeAreaView.Radius)
-        {
-            Debug.Log("BRRRRRRR");
-        }
+
         
     }
 }
