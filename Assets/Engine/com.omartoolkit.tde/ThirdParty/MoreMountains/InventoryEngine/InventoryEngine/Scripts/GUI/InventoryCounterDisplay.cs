@@ -21,7 +21,6 @@ namespace MoreMountains.InventoryEngine
 
 		[Header("Display")] 
 		/// the text UI to update with the total quantity of the item(s) in the target inventories
-		public Text TargetText;
 		#if MM_UGUI2
 		public TMP_Text TargetTMP;
 		#endif
@@ -33,7 +32,6 @@ namespace MoreMountains.InventoryEngine
 		/// </summary>
 		public void UpdateText()
 		{
-			TargetText.text = ComputeQuantity().ToString(DisplayFormat);
 			#if MM_UGUI2
 			if (TargetTMP != null)
 			{

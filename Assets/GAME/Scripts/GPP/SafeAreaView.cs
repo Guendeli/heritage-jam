@@ -4,7 +4,7 @@ using UnityEngine;
 public class SafeAreaView : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float Radius = 1f;
+    [SerializeField] public float Radius = 1f;
     [SerializeField] private SpriteRenderer Visual;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

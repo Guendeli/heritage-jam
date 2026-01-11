@@ -1,3 +1,4 @@
+using MoreMountains.TopDownEngine;
 using UnityEngine;
 
 public enum GamePhase
@@ -12,7 +13,10 @@ public class GameManager : MonoBehaviour
 
     public float CozyTime;
     public float PubgTime;
-
+    
+    
+    private SafeAreaView _safeAreaView;
+    private CharacterController _characterController;
     private float _phaseTimer;
     
     private void Awake()
@@ -34,6 +38,8 @@ public class GameManager : MonoBehaviour
     {
         _phaseTimer = 0;
         CurrentGamePhase = GamePhase.Cozy;
+        _safeAreaView = FindFirstObjectByType<SafeAreaView>();
+        _characterController = FindFirstObjectByType<CharacterController>();
     }
 
     // Update is called once per frame
@@ -45,6 +51,7 @@ public class GameManager : MonoBehaviour
                 break;
             case GamePhase.Pubg:
                 _phaseTimer += Time.deltaTime;
+                EvaluateSafeArea();
                 if (_phaseTimer >= PubgTime)
                 {
                     _phaseTimer = 0;
@@ -52,5 +59,25 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    private void EvaluateSafeArea()
+    {
+        if (LevelManager.Instance.Players.Count <= 1)
+            return;
+
+        if (_safeAreaView == null)
+        {
+            _safeAreaView = FindFirstObjectByType<SafeAreaView>();
+        }
+        
+        Character player = LevelManager.Instance.Players[0];
+        
+        float distance = Vector3.Distance(player.transform.position, _safeAreaView.transform.position);
+        if (distance <= _safeAreaView.Radius)
+        {
+            Debug.Log("BRRRRRRR");
+        }
+        
     }
 }
